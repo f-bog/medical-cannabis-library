@@ -25,7 +25,7 @@ const SelectType = styled(animated.div)`
     cursor: pointer;
     &:hover {
       img {
-        transform: scale(1.3);
+        transform: rotate(20deg);
       }
     }
   }
@@ -39,7 +39,7 @@ const TypeSearch = ({ setStrains, setIsLoading }) => {
   const [active, setActive] = useState(false);
   const springWidth = useSpring({
     width: active ? '200px' : '150px',
-    transform: active ? 'scale(1.3)' : 'scale(1.0)',
+    transform: active ? 'scale(1.1)' : 'scale(1.0)',
   });
   const springText = useSpring({
     opacity: active ? 1 : 0,
