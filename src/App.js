@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
+import './App.css';
+import TypeSearch from './components/TypeSearch';
+import StrainListItem from './components/StrainListItem';
+import Spinner from './components/Spinner';
 function App() {
+  const [strains, setStrains] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  console.log(strains);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1>Cannabis Doctor</h1>
+      <TypeSearch setStrains={setStrains} setIsLoading={setIsLoading} />
+      <div>
+        {isLoading ? (
+          strains.map(strain => <StrainListItem key={strain.id} {...strain} />)
+        ) : (
+          <Spinner />
+        )}
+      </div>
     </div>
   );
 }
