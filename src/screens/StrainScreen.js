@@ -28,7 +28,6 @@ const GoBack = styled(animated.div)`
 const StrainContainer = styled.main`
   margin: 50px auto;
   width: 80%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-contnet: center;
