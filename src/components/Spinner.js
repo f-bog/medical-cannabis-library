@@ -3,28 +3,28 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import sativa from '../images/sativa.png';
 
-const rotate = keyframes`
+const grow = keyframes`
   from {
-    transform: rotate(0deg);
+    transform: scale(0.9);
   }
 
   to {
-    transform: rotate(360deg);
+    transform: scale(2.5);
   }
 `;
 
 const AnimatedSpinner = styled.img`
   display: block;
   height: 100px;
-  margin: 0 auto;
-  animation: ${rotate} 2s linear infinite;
+  margin: 10px auto;
+  align-self: center;
+  animation: ${grow} 2s linear infinite;
 `;
 
 const Spinner = () => {
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center', alignSelf: 'center' }}>
       <AnimatedSpinner src={sativa} alt='spinner' />
-      <p>Loading...</p>
     </div>
   );
 };

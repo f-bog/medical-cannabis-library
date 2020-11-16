@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
-
+import React from 'react';
+import MainScreen from './screens/MainScreen';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import StrainScreen from './screens/StrainScreen';
 import './App.css';
-import TypeSearch from './components/TypeSearch';
-import StrainListItem from './components/StrainListItem';
-import Spinner from './components/Spinner';
 function App() {
-  const [strains, setStrains] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  console.log(strains);
   return (
     <div className='App'>
-      <h1>Cannabis Doctor</h1>
-      <TypeSearch setStrains={setStrains} setIsLoading={setIsLoading} />
-      <div>
-        {isLoading ? (
-          strains.map(strain => <StrainListItem key={strain.id} {...strain} />)
-        ) : (
-          <Spinner />
-        )}
-      </div>
+      <Router>
+        <Switch>
+          <Route path='/' exact>
+            <MainScreen />
+          </Route>
+          <Route path='/strains/:race/:name/:id' component={StrainScreen} />
+        </Switch>
+      </Router>
     </div>
   );
 }

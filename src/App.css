@@ -1,5 +1,5 @@
 .App {
-  max-width: 500px;
   display: block;
-  margin: 0 auto;
+  align-self: center;
+  width: 100%;
 }
