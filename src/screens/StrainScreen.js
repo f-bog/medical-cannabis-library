@@ -149,13 +149,13 @@ const StrainScreen = ({ match }) => {
     async function getStrainData() {
       const [effects, desc, flavors] = await Promise.all([
         axios(
-          `http://strainapi.evanbusse.com/${process.env.REACT_APP_SECRET_KEY}/strains/data/effects/${match.params.id}`
+          `//strainapi.evanbusse.com/${process.env.REACT_APP_SECRET_KEY}/strains/data/effects/${match.params.id}`
         ),
         axios(
-          `http://strainapi.evanbusse.com/${process.env.REACT_APP_SECRET_KEY}/strains/data/desc/${match.params.id}`
+          `//strainapi.evanbusse.com/${process.env.REACT_APP_SECRET_KEY}/strains/data/desc/${match.params.id}`
         ),
         axios(
-          `http://strainapi.evanbusse.com/${process.env.REACT_APP_SECRET_KEY}/strains/data/flavors/${match.params.id}`
+          `//strainapi.evanbusse.com/${process.env.REACT_APP_SECRET_KEY}/strains/data/flavors/${match.params.id}`
         ),
       ]);
       // format data into object
