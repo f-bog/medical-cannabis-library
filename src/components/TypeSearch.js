@@ -24,7 +24,7 @@ const TypeSearch = ({ setStrains, setIsLoading, type, setType }) => {
     async function fetchData() {
       setIsLoading(false);
       const data = await axios(
-        `http://strainapi.evanbusse.com/${process.env.REACT_APP_SECRET_KEY}/strains/search/race/${type}`
+        `//strainapi.evanbusse.com/${process.env.REACT_APP_SECRET_KEY}/strains/search/race/${type}`
       );
       const res = data;
       setIsLoading(true);
