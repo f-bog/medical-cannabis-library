@@ -5,6 +5,9 @@ import styled from 'styled-components';
 import { FixedSizeList as List } from 'react-window';
 import Spinner from '../components/Spinner';
 import WordSearch from '../components/WordSearch';
+import hybrid from '../images/hybrid.png';
+import indica from '../images/indica.png';
+import sativa from '../images/sativa.png';
 
 const MainScreen = () => {
   const [strains, setStrains] = useState([]);
@@ -23,35 +26,42 @@ const MainScreen = () => {
 
   return (
     <MainContainer>
-      <div className='control'>
-        <h1>Cannabis Doctor 🩺</h1>
-        <TypeSearch
-          setType={setType}
-          type={type}
-          setStrains={setStrains}
-          setIsLoading={setIsLoading}
-        />
-        <WordSearch setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
-        {isLoading ? (
-          <>
-            <p>
-              <strong>results:</strong> {searchResults.length} out of{' '}
-              {strains.length}
-            </p>
-            <p>
-              <strong>Strain Type:</strong>{' '}
-              {type.charAt(0).toUpperCase() + type.slice(1)}
-            </p>
-          </>
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
+      <header>
+        <div className='control'>
+          <h1>Cannabis Doctor 🩺</h1>
+          <div>
+            <TypeSearch
+              setType={setType}
+              type={type}
+              setStrains={setStrains}
+              setIsLoading={setIsLoading}
+            />
+            <WordSearch setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
+          </div>
+          <div>
+            {isLoading ? (
+              <>
+                <p style={{ fontSize: '1.3rem' }}>
+                  <strong>Strain Type:</strong>{' '}
+                  {type.charAt(0).toUpperCase() + type.slice(1)}
+                  <img width='35px' src={hybrid} alt={type} />
+                </p>
+
+                <p style={{ color: '#a5d0b7' }}>
+                  results: {searchResults.length} out of {strains.length}
+                </p>
+              </>
+            ) : (
+              <p>Loading...</p>
+            )}
+          </div>
+        </div>
+      </header>
 
       {isLoading ? (
         <List
           className='List'
-          height={400}
+          height={300}
           itemCount={searchResults.length}
           itemSize={130}
           itemData={searchResults}
@@ -68,13 +78,16 @@ const MainScreen = () => {
 const MainContainer = styled.main`
   margin: 0 auto;
   overflow: hidden;
+  header {
+    width: 100%;
+  }
   .control {
     margin: 0 auto;
-    width: 75%;
-    max-width: 650px;
+    width: 650px;
+    ${'' /* width: 100%; */}
   }
   color: #707070;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 716px) {
     .control {
       width: 90%;
     }
@@ -84,7 +97,6 @@ const MainContainer = styled.main`
     max-width: 700px !important;
     margin: 30px auto;
     padding: 30px 0px;
-    z-index: 10000;
   }
 `;
 
