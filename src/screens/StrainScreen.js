@@ -8,139 +8,6 @@ import styled from 'styled-components';
 import Spinner from '../components/Spinner';
 import strainIcon from '../util/strainIcon';
 
-const GoBack = styled(animated.div)`
-  width: 100px;
-  height: 50px;
-
-  a {
-    height: 100%;
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-    font-weight: 900;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #707070;
-    z-index: 1000;
-  }
-`;
-const StrainContainer = styled.main`
-  margin: 50px auto;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-contnet: center;
-  aling-items: center;
-`;
-
-const StrainMain = styled.main`
-  border-radius: 50px;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
-    0px 3px 1px -2px rgba(0, 0, 0, 0.12), 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
-
-  h1,
-  h2 {
-    color: black;
-  }
-  p {
-    font-size: 0.9rem;
-  }
-  .description {
-    color: #707070;
-  }
-  .info-container {
-    width: 65%;
-    padding: 4rem;
-  }
-  .image-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 45%;
-    background: #e2f0e8;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    img {
-      width: 70%;
-    }
-    .plant-info {
-      h1 {
-        font-size: 2rem;
-        color: #707070;
-      }
-      p {
-        font-size: 1.2rem;
-        font-weight: 900;
-      }
-      position: absolute;
-      top: 10px;
-      left: 1.5rem;
-      color: #707070;
-    }
-  }
-  .info {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  @media only screen and (max-width: 1200px) {
-    .info {
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      flex-direction: column;
-    }
-  }
-
-  @media only screen and (max-width: 992px) {
-    flex-direction: column;
-    .info {
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      flex-direction: column;
-    }
-    .image-container {
-      width: 100%;
-      border-top-right-radius: 50px;
-      border-top-left-radius: 50px;
-      border-bottom-left-radius: 0px;
-      img {
-        width: 50%;
-      }
-
-      .plant-info {
-        h1 {
-          font-size: 1.5rem;
-          color: #707070;
-        }
-        p {
-          font-size: 1rem;
-          font-weight: 900;
-        }
-        position: static;
-        align-self: flex-start;
-
-        padding-left: 1.5rem;
-        color: #707070;
-      }
-    }
-    .info-container {
-      margin: 0 auto;
-      width: 80%;
-      padding: 2rem 0;
-    }
-  }
-`;
-
 const StrainScreen = ({ match }) => {
   const [strainData, setData] = useState({});
   const [active, handleActive, handleDeactive] = useActive(false);
@@ -188,14 +55,15 @@ const StrainScreen = ({ match }) => {
 
   return !isLoading ? (
     <StrainContainer>
-      <GoBack
+      <animated.div
+        className='back'
         style={springUp}
         onMouseOver={handleActive}
         onMouseLeave={handleDeactive}
       >
         <Link to='/'>Go Back</Link>
-      </GoBack>
-      <StrainMain>
+      </animated.div>
+      <main>
         <div className='image-container'>
           <div className='plant-info'>
             <p>
@@ -238,11 +106,143 @@ const StrainScreen = ({ match }) => {
             <p>{strainData.effects.negative}</p>
           </div>
         </div>
-      </StrainMain>
+      </main>
     </StrainContainer>
   ) : (
     <Spinner icon={icon} />
   );
 };
+
+const StrainContainer = styled.main`
+  margin: 50px auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-contnet: center;
+  aling-items: center;
+  .back {
+    width: 100px;
+    height: 50px;
+
+    a {
+      height: 100%;
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: #707070;
+      z-index: 1000;
+    }
+  }
+  main {
+    border-radius: 50px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+      0px 3px 1px -2px rgba(0, 0, 0, 0.12), 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+
+    h1,
+    h2 {
+      color: black;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    .description {
+      color: #707070;
+    }
+    .info-container {
+      width: 65%;
+      padding: 4rem;
+    }
+    .image-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      width: 45%;
+      background: #e2f0e8;
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+      img {
+        width: 70%;
+      }
+      .plant-info {
+        h1 {
+          font-size: 2rem;
+          color: #707070;
+        }
+        p {
+          font-size: 1.2rem;
+          font-weight: 900;
+        }
+        position: absolute;
+        top: 10px;
+        left: 1.5rem;
+        color: #707070;
+      }
+    }
+    .info {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      .info {
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+    }
+
+    @media only screen and (max-width: 992px) {
+      flex-direction: column;
+      .info {
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+      .image-container {
+        width: 100%;
+        border-top-right-radius: 50px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 0px;
+        img {
+          width: 50%;
+        }
+
+        .plant-info {
+          h1 {
+            font-size: 1.5rem;
+            color: #707070;
+          }
+          p {
+            font-size: 1rem;
+            font-weight: 900;
+          }
+          position: static;
+          align-self: flex-start;
+
+          padding-left: 1.5rem;
+          color: #707070;
+        }
+      }
+      .info-container {
+        margin: 0 auto;
+        width: 80%;
+        padding: 2rem 0;
+      }
+    }
+  }
+`;
 
 export default StrainScreen;
