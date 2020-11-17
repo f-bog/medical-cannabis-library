@@ -49,7 +49,7 @@
 ## Table of Contents
 
 - [About the Project](#about-the-project)
-  - [Desclaimer](#desclaimer)
+  - [Disclaimer](#disclaimer)
   - [Built With](#built-with)
 - [Getting Started](#getting-started)
 
@@ -66,7 +66,7 @@
 
 ![GIF screenshot](/images/medical-cannabis-library.gif)
 
-### Desclaimer
+### Disclaimer
 
 I do not use nor do I condone the use of illegal drugs and substances! The sole purpose of this application is to showcase my growing knowledge of React, and other tools used. [The Strain Api](http://strains.evanbusse.com/) was used because I liked how the JSON data looked and I felt it would make for an interesting project.
 
