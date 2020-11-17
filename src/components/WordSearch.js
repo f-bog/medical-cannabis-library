@@ -57,11 +57,16 @@ const Input = styled(animated.input)`
   color: #707070;
   height: 50px;
   border: none;
+  background: #e2f0e8;
+
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  background: #e2f0e8;
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
 `;
 
 export default WordSearch;
