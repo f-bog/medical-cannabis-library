@@ -68,7 +68,7 @@
 
 ### Desclaimer
 
-I do not use nor do I condone the use of illegal drugs and substances! The sole purpose of this application is to showcase my growing knowledge of React, and other tools used. [The Strain Api](http://strains.evanbusse.com/) was used because I liked the how the JSON data looked, and I felt it would make for an interesting project.
+I do not use nor do I condone the use of illegal drugs and substances! The sole purpose of this application is to showcase my growing knowledge of React, and other tools used. [The Strain Api](http://strains.evanbusse.com/) was used because I liked how the JSON data looked and I felt it would make for an interesting project.
 
 ### Built With
 
