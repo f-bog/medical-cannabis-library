@@ -64,7 +64,7 @@
 
 ## About The Project
 
-![GIF screenshot](https://github.com/frederickbogdanoff/medical-cannabis-library/blob/master/images/medical-cannabis-library.gif)
+![GIF screenshot](/images/medical-cannabis-library.gif)
 
 ### Desclaimer
 
