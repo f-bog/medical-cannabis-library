@@ -39,20 +39,17 @@ const MainScreen = () => {
             <WordSearch setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
           </div>
           <div>
+            <p style={{ fontSize: '1.3rem' }}>
+              <strong>Strain Type:</strong>{' '}
+              {type.charAt(0).toUpperCase() + type.slice(1)}
+              <img width='35px' src={icon} alt={type} />
+            </p>
             {isLoading ? (
-              <>
-                <p style={{ fontSize: '1.3rem' }}>
-                  <strong>Strain Type:</strong>{' '}
-                  {type.charAt(0).toUpperCase() + type.slice(1)}
-                  <img width='35px' src={icon} alt={type} />
-                </p>
-
-                <p style={{ color: '#a5d0b7' }}>
-                  results: {searchResults.length} out of {strains.length}
-                </p>
-              </>
+              <p style={{ color: '#a5d0b7' }}>
+                Results: {searchResults.length} out of {strains.length}
+              </p>
             ) : (
-              <p>Loading...</p>
+              <p style={{ color: '#a5d0b7' }}>Loading...</p>
             )}
           </div>
         </div>

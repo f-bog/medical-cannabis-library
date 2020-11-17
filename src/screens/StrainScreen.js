@@ -90,8 +90,24 @@ const StrainMain = styled.main`
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
+  @media only screen and (max-width: 1200px) {
+    .info {
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+  }
+
   @media only screen and (max-width: 992px) {
     flex-direction: column;
+    .info {
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
     .image-container {
       width: 100%;
       border-top-right-radius: 50px;
@@ -100,6 +116,7 @@ const StrainMain = styled.main`
       img {
         width: 50%;
       }
+
       .plant-info {
         h1 {
           font-size: 1.5rem;
@@ -120,12 +137,6 @@ const StrainMain = styled.main`
       margin: 0 auto;
       width: 80%;
       padding: 2rem 0;
-    }
-    .info {
-      width: 100%;
-      align-items: center;
-
-      justify-content: space-between;
     }
   }
 `;
@@ -187,7 +198,10 @@ const StrainScreen = ({ match }) => {
       <StrainMain>
         <div className='image-container'>
           <div className='plant-info'>
-            <p>#{match.params.id}</p>
+            <p>
+              {match.params.race.charAt(0).toUpperCase() +
+                match.params.race.slice(1)}
+            </p>
             <h1>{match.params.name}</h1>
           </div>
 
