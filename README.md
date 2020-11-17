@@ -29,7 +29,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/frederickbogdanoff/medical-cannabis-library">
-    <img src="images/sativa.png" alt="sativa icon" width="80" height="80">
+    <img src="/images/sativa.png" alt="sativa icon" width="80" height="80">
   </a>
 
   <h3 align="center">Medical Cannabis Library</h3>
