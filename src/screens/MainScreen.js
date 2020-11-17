@@ -5,9 +5,8 @@ import styled from 'styled-components';
 import { FixedSizeList as List } from 'react-window';
 import Spinner from '../components/Spinner';
 import WordSearch from '../components/WordSearch';
-import hybrid from '../images/hybrid.png';
-import indica from '../images/indica.png';
-import sativa from '../images/sativa.png';
+
+import strainIcon from '../util/strainIcon';
 
 const MainScreen = () => {
   const [strains, setStrains] = useState([]);
@@ -24,6 +23,7 @@ const MainScreen = () => {
     setSearchResults(results);
   }, [searchTerm, strains]);
 
+  const icon = strainIcon(type);
   return (
     <MainContainer>
       <header>
@@ -44,7 +44,7 @@ const MainScreen = () => {
                 <p style={{ fontSize: '1.3rem' }}>
                   <strong>Strain Type:</strong>{' '}
                   {type.charAt(0).toUpperCase() + type.slice(1)}
-                  <img width='35px' src={hybrid} alt={type} />
+                  <img width='35px' src={icon} alt={type} />
                 </p>
 
                 <p style={{ color: '#a5d0b7' }}>
@@ -69,7 +69,7 @@ const MainScreen = () => {
           {StrainListItem}
         </List>
       ) : (
-        <Spinner />
+        <Spinner icon={icon} />
       )}
     </MainContainer>
   );

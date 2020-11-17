@@ -18,16 +18,16 @@ const WordSearch = ({ searchTerm, setSearchTerm }) => {
 
       <Input
         style={springWidth}
-        onFocus={() => handleActive()}
-        onBlur={() => handleDeactive()}
-        onMouseEnter={() => handleActive()}
-        onMouseLeave={() => handleDeactive()}
+        onFocus={handleActive}
+        onBlur={handleDeactive}
+        // onMouseEnter={handleActive}
+        // onMouseLeave={handleDeactive}
         type='search'
         name='search'
         value={searchTerm}
         id='search'
         onChange={handleChange}
-        placeholder='Search for name...'
+        placeholder='Search for a name...'
       />
     </InputContainer>
   );
@@ -57,6 +57,8 @@ const Input = styled(animated.input)`
   color: #707070;
   height: 50px;
   border: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   background: #e2f0e8;

@@ -3,9 +3,8 @@ import useActive from '../hooks/useActive';
 import { useSpring, animated } from 'react-spring';
 
 import { Link } from 'react-router-dom';
-import hybrid from '../images/hybrid.png';
-import indica from '../images/indica.png';
-import sativa from '../images/sativa.png';
+
+import strainIcon from '../util/strainIcon';
 import styled from 'styled-components';
 
 const StrainListItem = ({ index, style, data }) => {
@@ -25,12 +24,7 @@ const StrainListItem = ({ index, style, data }) => {
   });
 
   // check race for proper image source
-  const icon =
-    data[index].race === 'hybrid'
-      ? hybrid
-      : data[index].race === 'sativa'
-      ? sativa
-      : indica;
+  const icon = strainIcon(data[index].race);
 
   return (
     <div style={style}>

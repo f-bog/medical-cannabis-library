@@ -1,7 +1,5 @@
 import React from 'react';
-
 import styled, { keyframes } from 'styled-components';
-import sativa from '../images/sativa.png';
 
 const grow = keyframes`
   from {
@@ -21,10 +19,10 @@ const AnimatedSpinner = styled.img`
   animation: ${grow} 2s linear infinite;
 `;
 
-const Spinner = () => {
+const Spinner = ({ icon }) => {
   return (
-    <div style={{ textAlign: 'center', alignSelf: 'center' }}>
-      <AnimatedSpinner src={sativa} alt='spinner' />
+    <div style={{ display: 'flex', textAlign: 'center', height: '50vh' }}>
+      <AnimatedSpinner src={icon} alt='loader' />
     </div>
   );
 };

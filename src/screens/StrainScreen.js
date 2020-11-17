@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 import axios from 'axios';
 import styled from 'styled-components';
-import hybrid from '../images/hybrid.png';
-import indica from '../images/indica.png';
-import sativa from '../images/sativa.png';
+
 import Spinner from '../components/Spinner';
+import strainIcon from '../util/strainIcon';
 
 const GoBack = styled(animated.div)`
   width: 100px;
@@ -174,12 +173,7 @@ const StrainScreen = ({ match }) => {
   }, [match]);
 
   // check url for race type for image source
-  const icon =
-    match.params.race === 'hybrid'
-      ? hybrid
-      : match.params.race === 'sativa'
-      ? sativa
-      : indica;
+  const icon = strainIcon(match.params.race);
 
   return !isLoading ? (
     <StrainContainer>
@@ -233,7 +227,7 @@ const StrainScreen = ({ match }) => {
       </StrainMain>
     </StrainContainer>
   ) : (
-    <Spinner />
+    <Spinner icon={icon} />
   );
 };
 
