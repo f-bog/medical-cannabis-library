@@ -28,7 +28,7 @@ const MainScreen = () => {
     <MainContainer>
       <header>
         <div className='control'>
-          <h1>Cannabis Doctor 🩺</h1>
+          <h1>Medical Cannabis Library</h1>
           <div>
             <TypeSearch
               setType={setType}
