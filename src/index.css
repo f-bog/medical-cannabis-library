@@ -14,3 +14,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+input:focus {
+  outline: none;
+}
+
+::selection {
+  background-color: #00cf73;
+  color: #fff;
+}
+
+/*** Mozilla based browsers ***/
+::-moz-selection {
+  background-color: #00cf73;
+  color: #fff;
+}
+
+/***For Other Browsers ***/
+::-o-selection {
+  background-color: #00cf73;
+  color: #fff;
+}
+
+::-ms-selection {
+  background-color: #00cf73;
+  color: #fff;
+}
+
+/*** For Webkit ***/
+::-webkit-selection {
+  background-color: #00cf73;
+  color: #fff;
+}

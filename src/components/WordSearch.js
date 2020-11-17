@@ -9,12 +9,17 @@ const WordSearch = ({ searchTerm, setSearchTerm }) => {
   const springWidth = useSpring({
     width: active ? '270px' : '220px',
   });
+  const springScale = useSpring({
+    transform: active ? 'scale(1.2)' : 'scale(1.0)',
+  });
   const handleChange = event => {
     setSearchTerm(event.target.value);
   };
   return (
     <InputContainer style={{ display: 'flex' }}>
-      <FontAwesomeIcon className='icon' icon={faSearch} size='lg' />
+      <animated.div style={springScale} className='icon'>
+        <FontAwesomeIcon icon={faSearch} />
+      </animated.div>
 
       <Input
         style={springWidth}

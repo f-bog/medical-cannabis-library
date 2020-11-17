@@ -113,7 +113,7 @@ const StrainScreen = ({ match }) => {
   );
 };
 
-const StrainContainer = styled.main`
+const StrainContainer = styled.div`
   margin: 50px auto;
   width: 80%;
   display: flex;
@@ -194,7 +194,7 @@ const StrainContainer = styled.main`
       flex-wrap: wrap;
     }
 
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: 1260px) {
       .info {
         align-items: flex-start;
         justify-content: space-between;

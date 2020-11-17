@@ -77,7 +77,9 @@ const SelectType = styled(animated.div)`
     border: none;
     padding: 5px 15px;
     cursor: pointer;
-    &:hover {
+    &:hover,
+    &:focus {
+      outline: none;
       img {
         transform: rotate(20deg);
       }
