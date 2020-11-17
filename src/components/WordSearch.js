@@ -63,10 +63,7 @@ const Input = styled(animated.input)`
   border-bottom-left-radius: 0px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  -webkit-border-top-left-radius: 0px;
-  -webkit-border-bottom-left-radius: 0px;
-  -webkit-border-top-right-radius: 10px;
-  -webkit-border-bottom-right-radius: 10px;
+  -webkit-appearance: none;
 `;
 
 export default WordSearch;
