@@ -17,9 +17,11 @@ const MainScreen = () => {
 
   useEffect(() => {
     // update search results
+
     const results = strains.filter(strain =>
       strain.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
     setSearchResults(results);
   }, [searchTerm, strains]);
 
@@ -96,12 +98,5 @@ const MainContainer = styled.main`
     padding: 30px 0px;
   }
 `;
-
-// -ms-overflow-style: none; /* Internet Explorer 10+ */
-// scrollbar-width: none; /* Firefox */
-// &::-webkit-scrollbar {
-//   /* WebKit */
-//   display: none;
-// }
 
 export default MainScreen;

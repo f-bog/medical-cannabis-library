@@ -11,7 +11,11 @@ function App() {
           <Route path='/' exact>
             <MainScreen />
           </Route>
-          <Route path='/strains/:race/:name/:id' component={StrainScreen} />
+          <Route
+            basename='/'
+            path='/strains/:race/:name/:id'
+            component={StrainScreen}
+          />
         </Switch>
       </Router>
     </div>

@@ -25,13 +25,13 @@ const StrainScreen = ({ match }) => {
     async function getStrainData() {
       const [effects, desc, flavors] = await Promise.all([
         axios(
-          `//strainapi.evanbusse.com/${process.env.REACT_APP_SECRET_KEY}/strains/data/effects/${match.params.id}`
+          `https://strain-api-proxy.herokuapp.com/api/v1/strain-effects/${match.params.id}`
         ),
         axios(
-          `//strainapi.evanbusse.com/${process.env.REACT_APP_SECRET_KEY}/strains/data/desc/${match.params.id}`
+          `https://strain-api-proxy.herokuapp.com/api/v1/strain-description/${match.params.id}`
         ),
         axios(
-          `//strainapi.evanbusse.com/${process.env.REACT_APP_SECRET_KEY}/strains/data/flavors/${match.params.id}`
+          `https://strain-api-proxy.herokuapp.com/api/v1/strain-flavors/${match.params.id}`
         ),
       ]);
       // format data into object

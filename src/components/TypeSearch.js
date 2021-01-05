@@ -24,7 +24,7 @@ const TypeSearch = ({ setStrains, setIsLoading, type, setType }) => {
     async function fetchData() {
       setIsLoading(false);
       const data = await axios(
-        `//strainapi.evanbusse.com/${process.env.REACT_APP_SECRET_KEY}/strains/search/race/${type}`
+        `https://strain-api-proxy.herokuapp.com/api/v1/strain-${type}`
       );
       const res = data;
       setIsLoading(true);
